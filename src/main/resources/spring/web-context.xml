@@ -26,8 +26,10 @@ http://www.springframework.org/schema/aop/spring-aop.xsd">
 		<property name="prefix" value="/WEB-INF/jsps/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
 	<bean id="objectMapper"
 		class="com.fasterxml.jackson.databind.ObjectMapper" />
+	
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 
@@ -38,7 +40,7 @@ http://www.springframework.org/schema/aop/spring-aop.xsd">
    <mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
-			
+			<mvc:exclude-mapping path="/upload/**"/>
 			<bean class="com.neuedu.olms.web.PrivilegeInterceptor"></bean>
 		</mvc:interceptor>
 	

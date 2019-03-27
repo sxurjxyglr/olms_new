@@ -19,4 +19,10 @@ public class ExInfo {
 	
 	public static final int DATA_EXIST_CODE = 1003;
 	public static final String DATA_EXIST_MSG = "数据已存在";
+	
+	public static final int IMG_WRAPPER_ERROR_CODE = 1004;
+	public static final String IMG_WRAPPER_ERROR_MSG = "封面图片不能为空";
+	
+	public static final int IMG_UPLOAD_ERROR_CODE = 1005;
+	public static final String IMG_UPLOAD_ERROR_MSG = "文件上传失败";
 }

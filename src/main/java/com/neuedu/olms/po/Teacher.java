@@ -10,6 +10,9 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+//空的就不序列化
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Teacher {
 	private Long id;
 	
