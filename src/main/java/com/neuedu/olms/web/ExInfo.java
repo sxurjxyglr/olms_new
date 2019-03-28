@@ -25,4 +25,7 @@ public class ExInfo {
 	
 	public static final int IMG_UPLOAD_ERROR_CODE = 1005;
 	public static final String IMG_UPLOAD_ERROR_MSG = "文件上传失败";
+	
+	public static final int NO_COURSE_ERROR_CODE = 1006;
+	public static final String NO_COURSE_ERROR_MSG = "课程不存在";
 }

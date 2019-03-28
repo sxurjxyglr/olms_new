@@ -5,10 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.neuedu.olms.ex.InvalidParamException;
 import com.neuedu.olms.mapper.CourseMapper;
 import com.neuedu.olms.po.Course;
+import com.neuedu.olms.web.ExInfo;
 import com.neuedu.olms.web.PageData;
-import com.neuedu.oncourse.po.Teacher;
+
 
 @Service
 public class CourseServiceImpl implements CourseService {
@@ -26,5 +28,13 @@ public class CourseServiceImpl implements CourseService {
 		pages.setData(data);
 		return pages;
 
+	}
+	public void update(Course course) {
+		Course existCourse=courseMapper.getCourseById(course.getId());
+		if(existCourse==null) {
+			throw new InvalidParamException(ExInfo.NO_COURSE_ERROR_CODE, ExInfo.NO_COURSE_ERROR_MSG);
+		}
+		courseMapper.update(course);
+		
 	}
 }
